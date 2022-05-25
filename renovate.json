@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "config:base"
+  ],
+  "timezone": "Asia/Shanghai",
+  "schedule": ["after 6pm on sunday"]
+}
