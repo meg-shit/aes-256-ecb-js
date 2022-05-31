@@ -12,7 +12,7 @@ importers:
       typescript: 4.7.2
       unbuild: 0.7.4
       vite: 2.9.9
-      vitest: 0.12.9
+      vitest: 0.13.0
     devDependencies:
       '@suger-tdy/eslint-config': 1.1.0_xztl6dhthcahlo6akmb2bmjmle
       bumpp: 7.1.1
@@ -22,7 +22,7 @@ importers:
       typescript: 4.7.2
       unbuild: 0.7.4
       vite: 2.9.9
-      vitest: 0.12.9
+      vitest: 0.13.0
 
   playground:
     specifiers:
@@ -2349,7 +2349,7 @@ packages:
     dev: true
 
   /get-func-name/2.0.0:
-    resolution: {integrity: sha1-6td0q+5y4gQJQzoGY2YCPdaIekE=}
+    resolution: {integrity: sha512-Hm0ixYtaSZ/V7C8FJrtZIuBBI+iSgL+1Aq82zSu8VQNB4S3Gk8e7Qs3VwBDJAhmRZcFqkl3tQu36g/Foh5I5ig==}
     dev: true
 
   /get-intrinsic/1.1.1:
@@ -2928,7 +2928,7 @@ packages:
     dev: true
 
   /ms/2.0.0:
-    resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
+    resolution: {integrity: sha512-Tpp60P6IUJDTuOq/5Z8cdskzJujfwqfOTkrwIwj7IRISpnkJnT6SyJ4PCPnGMoFjC9ddhal5KVIYtAt97ix05A==}
     dev: true
 
   /ms/2.1.2:
@@ -3731,8 +3731,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.12.9:
-    resolution: {integrity: sha512-1NtyUANS72Qw5PwYvoztk067NX4fSiis2xQxhByOWS33eL2er/yupHyLxlBCOkF2ANe0dLFRvT1GVb+nczL5aw==}
+  /vitest/0.13.0:
+    resolution: {integrity: sha512-vuYt3+G25MMnANgyMHHG3VK86C9K/VFi/8uH5myQ2v660W4WArv99ElakPlVFxxSXXM1jqQPiPj2ht35Bod9LQ==}
     engines: {node: '>=v14.16.0'}
     hasBin: true
     peerDependencies:
