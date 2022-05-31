@@ -1,7 +1,7 @@
 {
   "name": "@suger-tdy/typescript-starter",
   "version": "0.0.1",
-  "packageManager": "pnpm@7.1.6",
+  "packageManager": "pnpm@7.1.7",
   "description": "starter project for typescript",
   "keywords": [
     "typescript-starter",
