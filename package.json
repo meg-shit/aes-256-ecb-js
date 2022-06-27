@@ -47,7 +47,7 @@
   "homepage": "https://github.com/tangdaoyuan/typescript-starter#readme",
   "devDependencies": {
     "@suger-tdy/eslint-config": "1.1.5",
-    "bumpp": "7.2.0",
+    "bumpp": "8.2.1",
     "esbuild": "0.14.47",
     "eslint": "8.18.0",
     "tsx": "3.6.0",
