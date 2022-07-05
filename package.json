@@ -11,7 +11,7 @@
   "author": "tangdaoyuan <1197633750@qq.com> (https://github.com/tangdaoyuan/)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tangdaoyuan/unplugin-mock.git"
+    "url": "git+https://github.com/tangdaoyuan/typescript-starter.git"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
