@@ -1,6 +1,6 @@
 {
   "name": "@meg-shit/aes-256-ecb-js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "packageManager": "pnpm@7.5.0",
   "description": "encrypt and dencrypt by aes-256-ecb for Javascript",
   "keywords": [
