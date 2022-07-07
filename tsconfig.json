@@ -20,7 +20,7 @@
       "@/*": [
         "src/*"
       ],
-      "typescript-starter/*": [
+      "@meg-shit/aes-256-ecb-js/*": [
         "dist/*"
       ]
     }

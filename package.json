@@ -1,17 +1,16 @@
 {
-  "name": "@suger-tdy/typescript-starter",
+  "name": "@meg-shit/aes-256-ecb-js",
   "version": "0.0.0",
   "packageManager": "pnpm@7.5.0",
-  "description": "starter project for typescript",
+  "description": "encrypt and dencrypt by aes-256-ecb for Javascript",
   "keywords": [
-    "typescript-starter",
-    "ts-starter"
+    "aes-256-ecb"
   ],
   "license": "MIT",
   "author": "tangdaoyuan <1197633750@qq.com> (https://github.com/tangdaoyuan/)",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tangdaoyuan/typescript-starter.git"
+    "url": "git+https://github.com/meg-shit/aes-256-ecb-js.git"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -42,9 +41,9 @@
     "release": "bumpp --tag --commit --push && pnpm publish"
   },
   "bugs": {
-    "url": "https://github.com/tangdaoyuan/typescript-starter/issues"
+    "url": "https://github.com/meg-shit/aes-256-ecb-js/issues"
   },
-  "homepage": "https://github.com/tangdaoyuan/typescript-starter#readme",
+  "homepage": "https://github.com/meg-shit/aes-256-ecb-js#readme",
   "devDependencies": {
     "@suger-tdy/eslint-config": "1.1.6",
     "bumpp": "8.2.1",
