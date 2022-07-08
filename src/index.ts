@@ -30,18 +30,19 @@ export function createCipher(key: string) {
   return crypto.createCipheriv(mode, key, null)
 }
 
-export function encrypt(data: string, key: string, options: Options = { inputEncoding: 'utf8', outputEncoding: 'base64' }) {
+export function encrypt(data: string, key: string, options?: Partial<Options>) {
+  const _options: Options = { ...{ inputEncoding: 'utf8', outputEncoding: 'base64' }, ...options }
   const cipher = createCipher(key)
-  const segment = cipher.update(Buffer.from(data, options.inputEncoding))
+  const segment = cipher.update(Buffer.from(data, _options.inputEncoding))
   const finals = cipher.final()
-  return Buffer.concat([segment, finals]).toString(options.outputEncoding)
+  return Buffer.concat([segment, finals]).toString(_options.outputEncoding)
 }
 
-export function decrypt(data: string, key: string, options: Options = { inputEncoding: 'base64', outputEncoding: 'utf8' }) {
-  const { inputEncoding, outputEncoding } = options
+export function decrypt(data: string, key: string, options?: Partial<Options>) {
+  const _options: Options = { ...{ inputEncoding: 'base64', outputEncoding: 'utf8' }, ...options }
   const decipher = createDecipher(key)
-  const segment = decipher.update(Buffer.from(data, inputEncoding))
+  const segment = decipher.update(Buffer.from(data, _options.inputEncoding))
   const finals = decipher.final()
 
-  return Buffer.concat([segment, finals]).toString(outputEncoding)
+  return Buffer.concat([segment, finals]).toString(_options.outputEncoding)
 }

@@ -27,6 +27,9 @@
     "dist",
     "*.d.ts"
   ],
+  "bin": {
+    "aes-ecb": "./bin/aes-ecb.js"
+  },
   "scripts": {
     "test": "vitest",
     "test:run": "vitest run",
@@ -44,8 +47,13 @@
     "url": "https://github.com/meg-shit/aes-256-ecb-js/issues"
   },
   "homepage": "https://github.com/meg-shit/aes-256-ecb-js#readme",
+  "dependencies": {
+    "picocolors": "^1.0.0",
+    "yargs": "^17.5.1"
+  },
   "devDependencies": {
     "@suger-tdy/eslint-config": "1.1.6",
+    "@types/yargs": "^17.0.10",
     "bumpp": "8.2.1",
     "esbuild": "0.14.48",
     "eslint": "8.19.0",
