@@ -25,7 +25,8 @@
   },
   "files": [
     "dist",
-    "*.d.ts"
+    "*.d.ts",
+    "bin"
   ],
   "bin": {
     "aes-ecb": "./bin/aes-ecb.js"
