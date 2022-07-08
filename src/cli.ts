@@ -45,7 +45,7 @@ yargs
         describe: 'Output encoding',
       })
       .option('auto-padding', {
-        alias: 'ap',
+        alias: 'a',
         describe: 'Enable Auto padding (only works for encrypt)',
         default: true,
         type: 'boolean',
