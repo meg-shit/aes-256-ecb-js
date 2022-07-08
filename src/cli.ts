@@ -3,9 +3,7 @@ import Logger from './logger'
 import type { Options } from './index'
 import { decrypt, encrypt } from './index'
 
-interface Argv {
-  inputEncoding: BufferEncoding
-  outputEncoding: BufferEncoding
+interface Argv extends Options{
   key: string
   data: string
   cmd: 'encrypt' | 'decrypt'
@@ -46,12 +44,28 @@ yargs
         alias: 'o',
         describe: 'Output encoding',
       })
+      .option('auto-padding', {
+        alias: 'ap',
+        describe: 'Enable Auto padding (only works for encrypt)',
+        default: true,
+        type: 'boolean',
+      })
+      .option('padding', {
+        alias: 'p',
+        describe: 'Auto padding String (only works for encrypt)',
+        default: '08',
+        type: 'string',
+      })
       .demandOption(['key'], 'ECB Key is required')
   },
   (argv) => {
-    const { cmd, key, data, inputEncoding, outputEncoding } = argv
+    console.log(argv)
+    const { cmd, key, data, inputEncoding, outputEncoding, autoPadding, padding } = argv
 
-    const options: Partial<Options> = {}
+    const options: Partial<Options> = {
+      autoPadding,
+      padding,
+    }
     if (inputEncoding) options.inputEncoding = inputEncoding
     if (outputEncoding) options.outputEncoding = outputEncoding
 

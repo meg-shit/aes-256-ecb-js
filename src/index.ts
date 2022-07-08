@@ -5,6 +5,8 @@ export default '@meg-shit/aes-256-ecb-js'
 export interface Options {
   inputEncoding: BufferEncoding
   outputEncoding: BufferEncoding
+  autoPadding: boolean
+  padding: string
 }
 
 const ModeMap = {
@@ -31,16 +33,45 @@ export function createCipher(key: string) {
 }
 
 export function encrypt(data: string, key: string, options?: Partial<Options>) {
-  const _options: Options = { ...{ inputEncoding: 'utf8', outputEncoding: 'base64' }, ...options }
+  const _options: Options = {
+    inputEncoding: 'utf8',
+    outputEncoding: 'base64',
+    autoPadding: true,
+    padding: '00',
+    ...options,
+  }
+
+  let dataBuffer = Buffer.from(data, _options.inputEncoding)
+  if (!_options.autoPadding) {
+    const len = 16 - (data.length % 16)
+    const paddingBuf = Buffer.from(new Array(len).fill(_options.padding))
+
+    dataBuffer = Buffer.concat(
+      [
+        Buffer.from(data, _options.inputEncoding),
+        paddingBuf,
+      ],
+    )
+  }
+
   const cipher = createCipher(key)
-  const segment = cipher.update(Buffer.from(data, _options.inputEncoding))
+  cipher.setAutoPadding(_options.autoPadding)
+  const segment = cipher.update(dataBuffer)
   const finals = cipher.final()
+
   return Buffer.concat([segment, finals]).toString(_options.outputEncoding)
 }
 
 export function decrypt(data: string, key: string, options?: Partial<Options>) {
-  const _options: Options = { ...{ inputEncoding: 'base64', outputEncoding: 'utf8' }, ...options }
+  const _options: Options = {
+    inputEncoding: 'base64',
+    outputEncoding: 'utf8',
+    autoPadding: true,
+    padding: '00',
+    ...options,
+  }
   const decipher = createDecipher(key)
+  decipher.setAutoPadding(_options.autoPadding)
   const segment = decipher.update(Buffer.from(data, _options.inputEncoding))
   const finals = decipher.final()
 
